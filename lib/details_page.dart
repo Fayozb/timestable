@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class onePage extends StatelessWidget {
+class DetailPage extends StatelessWidget {
   final int num;
 
-  const onePage({super.key, required this.num});
+  const DetailPage({super.key, required this.num});
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +12,14 @@ class onePage extends StatelessWidget {
       backgroundColor: Colors.grey,
       body: Container(
         alignment: Alignment.center,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
                 colors: [Colors.black, Colors.white],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight)),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 40,
               width: double.infinity,
             ),
@@ -27,21 +27,21 @@ class onePage extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(Icons.arrow_circle_left_outlined),
+              icon: const Icon(Icons.arrow_circle_left_outlined),
               iconSize: 50,
               color: Colors.blue,
             ),
-            SizedBox(height: 50, width: 370),
+            const SizedBox(height: 50, width: 370),
             Expanded(
               child: ListView.builder(
                 itemCount: 10,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  return  Center(
+                  return Center(
                     child: Text(
-                      '${num} x ${index+1} = ${num * (index+1)}',
-                      style:
-                      GoogleFonts.acme(fontSize: 50, fontWeight: FontWeight.w600),
+                      '$num x ${index + 1} = ${num * (index + 1)}',
+                      style: GoogleFonts.acme(
+                          fontSize: 50, fontWeight: FontWeight.w600),
                     ),
                   );
                 },
