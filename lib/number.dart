@@ -6,19 +6,21 @@ class NumberPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      child: Container(
 
-        alignment: Alignment.center,
-        width: 70,
-        height: 70,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(35),
-          border: Border.all(color: Colors.black),),
-        child: TextButton(onPressed: (){
-          Navigator.push(context,MaterialPageRoute(builder: (_) => onePage(num: number,)));
-        }, child: Text(
-          '${number}',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 50),
-        )),
+          alignment: Alignment.center,
+          width: 70,
+          height: 70,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(35),
+            border: Border.all(color: Colors.black),),
+          child: GestureDetector(onTap: (){
+            Navigator.push(context,MaterialPageRoute(builder: (_) => onePage(num: number,)));
+          }, child: Text(
+            '${number}',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 50),
+          )),
+      ),
     );
   }
 }
